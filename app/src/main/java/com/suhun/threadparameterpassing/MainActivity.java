@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     public TextView showBroadcast, showMessageSend;
     public AppData appData;
     public BroadCastThread broadCastThread;
+    public MessageHandlerThread messageHandlerThread;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         initView();
         appData = (AppData)getApplication();
         appData.myBroadcastReceiver = new MyBroadcastReceiver(this);
-
+        appData.myMessageHandler = new MyMessageHandler(this);
     }
     private void initView(){
         showBroadcast = findViewById(R.id.broadcastResult);
@@ -46,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void runMessagePassingFun(View view){
-
+        if(messageHandlerThread==null){
+            messageHandlerThread = new MessageHandlerThread(this);
+            messageHandlerThread.start();
+        }
     }
 }
