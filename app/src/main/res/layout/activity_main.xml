@@ -1,18 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
     tools:context=".MainActivity">
-
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="26sp"
+        android:text="Passing By Broadcast"
+        android:padding="4dp"
+        android:gravity="center_horizontal"
+        />
+    <TextView
+        android:id="@+id/broadcastResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="18sp"
+        android:gravity="center_horizontal"
+        />
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="Run Broadcast Passing"
+        android:textAllCaps="false"
+        android:layout_gravity="center_horizontal"
+        android:onClick="runBroadcastPassingFun"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="#fff0"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="26sp"
+        android:text="Passing By Message"
+        android:padding="4dp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        />
+    <TextView
+        android:id="@+id/MessageResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="18sp"
+        android:gravity="center_horizontal"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Run Message Passing"
+        android:textAllCaps="false"
+        android:layout_gravity="center_horizontal"
+        android:onClick="runMessagePassingFun"
+        />
+</androidx.appcompat.widget.LinearLayoutCompat>
